@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @course.code %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= link_to @course.teacher.name_with_initial, person_path(@course.teacher.id) %>
+</p>
+
+    <strong>Students:</strong>
+    <% if @students_courses.blank? %>
+        <strong>There are no students in this course.</strong>
+    <% else %>
+        <table>
+            <tbody>
+            <% @students_courses.each do |student_course| %>
+                <tr>
+                    <td><%= link_to student_course.person.name_with_initial, person_path(student_course.person.id) %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+
+    <% end %>
+
+<%= link_to 'Add Student', new_student_course_path(:course_id => @course.id) %> |
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
