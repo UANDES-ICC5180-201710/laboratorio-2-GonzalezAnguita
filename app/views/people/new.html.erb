@@ -1,5 +1,11 @@
-<h1>New Person</h1>
-
-<%= render 'form', person: @person %>
-
-<%= link_to 'Back', people_path %>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        New Person
+    </div>
+    <div class="panel-body">
+        <%= render 'form', person: @person %>
+    </div>
+    <div class="panel-footer">
+        <%= link_to 'Back', people_path, class: 'btn btn-default btn-md' %>
+    </div>
+</div>

@@ -1,15 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-    <strong>Person:</strong>
-    <%= link_to @student_course.person.name_with_initial, person_path(@student_course.person.id) %>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <h4>
+            <small>Student:</small>
+            <%= link_to @student_course.person.name_with_initial, person_path(@student_course.person.id) %>
 
-</p>
+        </h4>
 
-<p>
-    <strong>Course:</strong>
-    <%= link_to @student_course.course.title, course_path(@student_course.course.id) %>
-</p>
+        <h4>
+            <small>Course:</small>
+            <%= link_to @student_course.course.title, course_path(@student_course.course.id) %>
+        </h4>
+    </div>
+    <div class="panel-footer">
 
-<%= link_to 'Edit', edit_student_course_path(@student_course) %> |
-<%= link_to 'Back', student_courses_path %>
+        <%= link_to 'Edit Student Course', edit_student_course_path(@student_course), class: 'btn btn-primary btn-md' %>
+        <%= link_to 'Back', student_courses_path, class: 'btn btn-default btn-md' %>
+    </div>
+</div>

@@ -1,32 +1,37 @@
 <%= form_for(course) do |f| %>
-  <% if course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+    <% if course.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-      <% course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+                <% course.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+        <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control' %>
+        </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+    <div class="field">
+        <div class="form-group">
+            <%= f.label :code %>
+            <%= f.text_field :code, class: 'form-control' %>
+        </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :code %>
-    <%= f.text_field :code %>
-  </div>
-
-  <div class="field">
-    <%= f.label :teacher_id %>
-    <%= collection_select(:course, :teacher_id, Person.all, :id, :name_with_initial) %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+        <div class="form-group">
+            <%= f.label :teacher_id %>
+            <%= collection_select(:course, :teacher_id, Person.all, :id, :name_with_initial, {}, {:class=>'form-control'}) %>
+        </div>
+    </div>
+    <div class="actions">
+        <%= f.submit :class => 'btn btn-md btn-primary pull-right' %>
+    </div>
 <% end %>

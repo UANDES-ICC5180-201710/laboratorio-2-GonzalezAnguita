@@ -13,16 +13,20 @@
     <% end %>
 
     <div class="field">
-        <%= f.label :person_id %>
-        <%= collection_select(:student_course, :person_id, Person.all, :id, :name_with_initial) %>
+        <div class="form-group">
+            <%= f.label :person_id %>
+            <%= collection_select(:student_course, :person_id, Person.all, :id, :name_with_initial, {}, {:class=>'form-control'}) %>
+        </div>
     </div>
 
     <div class="field">
-        <%= f.label :course_id %>
-        <%= collection_select(:student_course, :course_id, Course.all, :id, :title) %>
+        <div class="form-group">
+            <%= f.label :course_id %>
+            <%= collection_select(:student_course, :course_id, Course.all, :id, :title, {}, {:class=>'form-control'}) %>
+        </div>
     </div>
 
     <div class="actions">
-        <%= f.submit %>
+        <%= f.submit :class => 'btn btn-md btn-primary pull-right' %>
     </div>
 <% end %>

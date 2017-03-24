@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProyectoRailsBase</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>ProyectoRailsBase</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= link_to 'Courses', courses_path %>
-    <%= link_to 'People', people_path %>
-    <%= link_to 'Student-Courses', student_courses_path %>
-    <%= yield %>
-  </body>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <%= render 'layouts/navbar' %>
+        <div class="container">
+            <%= yield %>
+        </div>
+    </body>
 </html>
