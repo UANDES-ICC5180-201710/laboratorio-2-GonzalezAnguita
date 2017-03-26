@@ -1,24 +1,12 @@
-# README
+# First Lab Experience
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample Ruby on Rails application for managing courses, students and inscriptions.
 
-Things you may want to cover:
+* For first deploy, use the following command to create and migrate the db.
+``rake db:create db:migrate``
 
-* Ruby version
+* It does not have system dependencies.
 
-* System dependencies
+* Using ruby 2.2.2p95
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Using Rails 5.0.2
